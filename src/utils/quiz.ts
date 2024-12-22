@@ -7,7 +7,6 @@ export function getAvailableQuestions(
   difficulty: 'easy' | 'medium' | 'hard',
   answeredQuestions: Set<number>
 ): Question[] {
-  // Filter questions by difficulty and exclude answered ones
   return allQuestions.filter(
     q => q.difficulty === difficulty && !answeredQuestions.has(q.id)
   );
