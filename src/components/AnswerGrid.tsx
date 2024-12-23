@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface AnswerGridProps {
   answers: string[];
   selectedAnswer: number | null; // Index of the shuffled selected answer
@@ -33,7 +31,7 @@ export default function AnswerGrid({
                 : isSelectedIncorrect
                 ? 'bg-red-100 border-red-500 text-red-800' // Red for selected incorrect answer
                 : 'bg-white border-gray-300 text-gray-700 hover:bg-gray-100' // Default state
-            }`}
+            } dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100`}
           >
             {answer}
           </button>

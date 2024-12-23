@@ -7,3 +7,173 @@
 body {
   font-family: 'Outfit', sans-serif;
 }
+
+body.dark-mode {
+  background-color: #1a202c; /* Dark background color */
+  color: #cbd5e0; /* Light text color */
+}
+
+body.dark-mode .bg-white {
+  background-color: #2d3748; /* Dark background for white elements */
+}
+
+body.dark-mode .text-gray-700 {
+  color: #e2e8f0; /* Light text color for gray elements */
+}
+
+body.dark-mode .border-gray-300 {
+  border-color: #4a5568; /* Dark border color for gray elements */
+}
+
+body.dark-mode .bg-gray-100 {
+  background-color: #4a5568; /* Dark background for gray elements */
+}
+
+body.dark-mode .bg-gray-200 {
+  background-color: #718096; /* Darker background for gray elements */
+}
+
+body.dark-mode .text-blue-500 {
+  color: #63b3ed; /* Light blue text color */
+}
+
+body.dark-mode .bg-blue-50 {
+  background-color: #2b6cb0; /* Dark blue background */
+}
+
+body.dark-mode .text-blue-700 {
+  color: #bee3f8; /* Light blue text color */
+}
+
+body.dark-mode .text-blue-600 {
+  color: #90cdf4; /* Light blue text color */
+}
+
+body.dark-mode .bg-green-100 {
+  background-color: #22543d; /* Dark green background */
+}
+
+body.dark-mode .text-green-800 {
+  color: #9ae6b4; /* Light green text color */
+}
+
+body.dark-mode .bg-red-100 {
+  background-color: #742a2a; /* Dark red background */
+}
+
+body.dark-mode .text-red-800 {
+  color: #feb2b2; /* Light red text color */
+}
+
+/* Additional dark mode styles */
+body.dark-mode .bg-gray-50 {
+  background-color: #2d3748; /* Dark background for gray-50 elements */
+}
+
+body.dark-mode .text-gray-900 {
+  color: #e2e8f0; /* Light text color for gray-900 elements */
+}
+
+body.dark-mode .bg-indigo-100 {
+  background-color: #3c366b; /* Dark indigo background */
+}
+
+body.dark-mode .text-indigo-800 {
+  color: #b2f5ea; /* Light indigo text color */
+}
+
+body.dark-mode .bg-yellow-100 {
+  background-color: #744210; /* Dark yellow background */
+}
+
+body.dark-mode .text-yellow-800 {
+  color: #faf089; /* Light yellow text color */
+}
+
+body.dark-mode .bg-purple-100 {
+  background-color: #553c9a; /* Dark purple background */
+}
+
+body.dark-mode .text-purple-800 {
+  color: #d6bcfa; /* Light purple text color */
+}
+
+body.dark-mode .bg-pink-100 {
+  background-color: #702459; /* Dark pink background */
+}
+
+body.dark-mode .text-pink-800 {
+  color: #fbb6ce; /* Light pink text color */
+}
+
+body.dark-mode .bg-orange-100 {
+  background-color: #7b341e; /* Dark orange background */
+}
+
+body.dark-mode .text-orange-800 {
+  color: #fbd38d; /* Light orange text color */
+}
+
+body.dark-mode .bg-teal-100 {
+  background-color: #234e52; /* Dark teal background */
+}
+
+body.dark-mode .text-teal-800 {
+  color: #81e6d9; /* Light teal text color */
+}
+
+body.dark-mode .bg-cyan-100 {
+  background-color: #065f46; /* Dark cyan background */
+}
+
+body.dark-mode .text-cyan-800 {
+  color: #9fedd7; /* Light cyan text color */
+}
+
+body.dark-mode .bg-lime-100 {
+  background-color: #3f6212; /* Dark lime background */
+}
+
+body.dark-mode .text-lime-800 {
+  color: #d9f99d; /* Light lime text color */
+}
+
+body.dark-mode .bg-amber-100 {
+  background-color: #78350f; /* Dark amber background */
+}
+
+body.dark-mode .text-amber-800 {
+  color: #f6ad55; /* Light amber text color */
+}
+
+body.dark-mode .bg-emerald-100 {
+  background-color: #064e3b; /* Dark emerald background */
+}
+
+body.dark-mode .text-emerald-800 {
+  color: #9ae6b4; /* Light emerald text color */
+}
+
+body.dark-mode .bg-fuchsia-100 {
+  background-color: #702459; /* Dark fuchsia background */
+}
+
+body.dark-mode .text-fuchsia-800 {
+  color: #fbb6ce; /* Light fuchsia text color */
+}
+
+body.dark-mode .bg-rose-100 {
+  background-color: #742a2a; /* Dark rose background */
+}
+
+body.dark-mode .text-rose-800 {
+  color: #feb2b2; /* Light rose text color */
+}
+
+.container {
+  @apply mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.text-responsive {
+  @apply text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl;
+}

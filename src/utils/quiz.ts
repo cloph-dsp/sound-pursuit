@@ -1,14 +1,14 @@
 import { Question, QuizProgress } from '../types/quiz';
 
-export const QUESTIONS_TO_ADVANCE = 50;
+export const QUESTIONS_TO_ADVANCE: number = 30;
 
 export function getAvailableQuestions(
   allQuestions: Question[],
   difficulty: 'easy' | 'medium' | 'hard',
-  answeredQuestions: Set<number>
+  answeredQuestions: Set<number> // Ensure it's a Set
 ): Question[] {
   return allQuestions.filter(
-    q => q.difficulty === difficulty && !answeredQuestions.has(q.id)
+    q => q.difficulty === difficulty && !answeredQuestions.has(q.id) // Use Set method
   );
 }
 
@@ -28,14 +28,14 @@ export function calculateNextLevel(progress: QuizProgress): 'easy' | 'medium' | 
   ) {
     return 'medium';
   }
-  
+
   if (
     progress.currentLevel === 'medium' &&
     progress.correctAnswers >= QUESTIONS_TO_ADVANCE
   ) {
     return 'hard';
   }
-  
+
   return progress.currentLevel;
 }
 

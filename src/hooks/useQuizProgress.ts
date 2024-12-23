@@ -1,11 +1,10 @@
-// Corrected useQuizProgress.ts
 import { useState, useCallback } from 'react';
 import type { QuizProgress } from '../types/quiz';
 import { QUESTIONS_TO_ADVANCE } from '../utils/quiz';
 
 export function useQuizProgress() {
   const [progress, setProgress] = useState<QuizProgress>({
-    answeredQuestions: new Set(),
+    answeredQuestions: new Set<number>(), // Initialize as a Set
     correctAnswers: 0,
     currentLevel: 'easy',
     questionsNeededForNextLevel: QUESTIONS_TO_ADVANCE,
@@ -14,7 +13,7 @@ export function useQuizProgress() {
   const updateProgress = useCallback((questionId: number, isCorrect: boolean) => {
     setProgress((prev) => ({
       ...prev,
-      answeredQuestions: new Set([...prev.answeredQuestions, questionId]),
+      answeredQuestions: new Set([...prev.answeredQuestions, questionId]), // Ensure it's a Set
       correctAnswers: isCorrect ? prev.correctAnswers + 1 : prev.correctAnswers,
     }));
   }, []);

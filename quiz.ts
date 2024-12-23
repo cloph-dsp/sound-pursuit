@@ -9,10 +9,9 @@ export interface Question {
 export interface QuizProgress {
   currentLevel: 'easy' | 'medium' | 'hard';
   correctAnswers: number;
-  answeredQuestions: number[];
+  answeredQuestions: Set<number>;
   questionsNeededForNextLevel: number;
 }
-
 
 export interface QuizState {
   currentQuestionIndex: number;
@@ -20,7 +19,7 @@ export interface QuizState {
   feedback: string;
   selectedAnswer: number | null;
   isAnswered: boolean;
-  level: number;
+  difficulty: 'easy' | 'medium' | 'hard';
   availableQuestions: number[];
   progress: QuizProgress;
 }

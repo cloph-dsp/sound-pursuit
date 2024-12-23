@@ -1,138 +1,116 @@
-import React, { createContext, useContext, useCallback, useEffect } from 'react';
+import React, { createContext, useContext, useState, ReactNode } from 'react';
+import { getAvailableQuestions, QUESTIONS_TO_ADVANCE } from '../utils/quiz';
 import { allQuestions } from '../data/questions';
-import { useQuizState } from '../hooks/useQuizState';
-import { useQuizProgress } from '../hooks/useQuizProgress';
-import {
-  getAvailableQuestions,
-  shuffleQuestions,
-  calculateNextLevel,
-  getQuestionsNeededForNextLevel,
-} from '../utils/quiz';
-import type { Question } from '../types/quiz';
+import { Question } from '../types/quiz';
 
-interface QuizContextType {
-  score: number;
-  level: number;
+interface Progress {
+  currentLevel: number;
+  answeredQuestions: number[];
+  questionsNeededForNextLevel: number;
+}
+
+interface QuizContextProps {
+  progress: Progress;
   currentQuestion: Question | null;
+  setCurrentQuestion: React.Dispatch<React.SetStateAction<Question | null>>;
   selectedAnswer: number | null;
   isAnswered: boolean;
   feedback: string;
-  handleAnswerSelect: (index: number) => void;
-  questionsNeeded: number;
+  score: number;
+  difficulty: 'easy' | 'medium' | 'hard';
+  handleAnswerSelect: (answer: number) => void;
 }
 
-const QuizContext = createContext<QuizContextType | null>(null);
+const QuizContext = createContext<QuizContextProps | null>(null);
 
-export function QuizProvider({ children }: { children: React.ReactNode }) {
-  const {
-    currentQuestion,
-    selectedAnswer,
-    isAnswered,
-    feedback,
-    score,
-    showingFeedback,
-    updateQuestion,
-    updateScore,
-    setAnswer,
-    clearFeedback,
-  } = useQuizState();
+const initialProgress: Progress = {
+  currentLevel: 1,
+  answeredQuestions: [],
+  questionsNeededForNextLevel: QUESTIONS_TO_ADVANCE,
+};
 
-  const {
-    progress,
-    updateProgress,
-    advanceLevel,
-    resetAnsweredQuestionsForLevel,
-  } = useQuizProgress();
+export const QuizProvider = ({ children }: { children: ReactNode }) => {
+  const [progress, setProgress] = useState<Progress>(initialProgress);
+  const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
+  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
+  const [isAnswered, setIsAnswered] = useState(false);
+  const [feedback, setFeedback] = useState('');
+  const [score, setScore] = useState(0);
 
-  const getNextQuestion = useCallback(() => {
-    const availableQuestions = getAvailableQuestions(
-      allQuestions,
-      progress.currentLevel,
-      progress.answeredQuestions
-    );
-
-    if (availableQuestions.length === 0) {
-      resetAnsweredQuestionsForLevel();
-      return shuffleQuestions(
-        getAvailableQuestions(allQuestions, progress.currentLevel, new Set())
-      )[0];
+  const handleAnswerSelect = (answer: number) => {
+    if (!currentQuestion || isAnswered) return;
+  
+    // 1. First mark as answered and store selection
+    setIsAnswered(true);
+    setSelectedAnswer(answer);
+  
+    // 2. Determine correctness and prepare feedback
+    const isCorrect = answer === currentQuestion.correctAnswer;
+    const points = currentQuestion.difficulty === 'easy' ? 10 : 
+                   currentQuestion.difficulty === 'medium' ? 20 : 30;
+    const feedback = isCorrect 
+      ? `Correct! +${points} points`
+      : `Incorrect. The correct answer was: ${currentQuestion.answerChoices[currentQuestion.correctAnswer]}`;
+    
+    // 3. Show feedback and update score
+    setFeedback(feedback);
+    if (isCorrect) {
+      setScore(prevScore => prevScore + points);
     }
-
-    return shuffleQuestions(availableQuestions)[0];
-  }, [progress.currentLevel, progress.answeredQuestions, resetAnsweredQuestionsForLevel]);
-
-  useEffect(() => {
-    if (!showingFeedback) {
-      const nextQuestion = getNextQuestion();
-      updateQuestion(nextQuestion);
-    }
-  }, [showingFeedback, getNextQuestion, updateQuestion]);
-
-  const handleAnswerSelect = useCallback(
-    (index: number) => {
-      if (isAnswered || !currentQuestion || showingFeedback) return;
-
-      const isCorrect = index === currentQuestion.correctAnswer;
-      const points =
-        progress.currentLevel === 'easy'
-          ? 10
-          : progress.currentLevel === 'medium'
-          ? 20
-          : 30;
-
-      setAnswer(index, isCorrect, currentQuestion.answerChoices[currentQuestion.correctAnswer]);
-      updateProgress(currentQuestion.id, isCorrect);
-
-      if (isCorrect) {
-        updateScore(points);
+  
+    // 4. Update progress
+    const currentQuestionId = currentQuestion.id;
+    setProgress(prevProgress => ({
+      ...prevProgress,
+      answeredQuestions: [...prevProgress.answeredQuestions, currentQuestionId]
+    }));
+  
+    // 5. Wait for feedback display BEFORE preparing next question
+    setTimeout(() => {
+      const levelMap = { 1: 'easy', 2: 'medium', 3: 'hard' } as const;
+      const nextQuestions = getAvailableQuestions(
+        allQuestions,
+        levelMap[progress.currentLevel as 1 | 2 | 3],
+        new Set([...progress.answeredQuestions, currentQuestionId])
+      );
+  
+      if (nextQuestions.length > 0) {
+        const nextQuestion = nextQuestions[Math.floor(Math.random() * nextQuestions.length)];
+        
+        // 6. Reset states and move to next question
+        setTimeout(() => {
+          setIsAnswered(false);
+          setSelectedAnswer(null);
+          setFeedback('');
+          setCurrentQuestion(nextQuestion);
+        }, 500); // Small delay after feedback before resetting
       }
-
-      setTimeout(() => {
-        const nextLevel = calculateNextLevel(progress);
-
-        if (nextLevel !== progress.currentLevel) {
-          advanceLevel(nextLevel);
-        }
-
-        clearFeedback();
-      }, 2000); // Delay for feedback display
-    },
-    [
-      currentQuestion,
-      isAnswered,
-      showingFeedback,
-      progress,
-      setAnswer,
-      updateProgress,
-      updateScore,
-      advanceLevel,
-      clearFeedback,
-    ]
-  );
-
-  const questionsNeeded = getQuestionsNeededForNextLevel(progress);
-
-  const value = {
-    score,
-    level:
-      progress.currentLevel === 'easy' ? 1 : progress.currentLevel === 'medium' ? 2 : 3,
-    currentQuestion,
-    selectedAnswer,
-    isAnswered,
-    feedback,
-    handleAnswerSelect,
-    questionsNeeded,
+    }, 2000); // Show feedback for 2 seconds
   };
 
   return (
-    <QuizContext.Provider value={value}>{children}</QuizContext.Provider>
+    <QuizContext.Provider
+      value={{
+        progress,
+        currentQuestion,
+        setCurrentQuestion,
+        selectedAnswer,
+        isAnswered,
+        feedback,
+        score,
+        difficulty: { 1: 'easy', 2: 'medium', 3: 'hard' }[progress.currentLevel as 1 | 2 | 3] as 'easy' | 'medium' | 'hard',
+        handleAnswerSelect,
+      }}
+    >
+      {children}
+    </QuizContext.Provider>
   );
-}
+};
 
-export function useQuiz() {
+export const useQuiz = () => {
   const context = useContext(QuizContext);
   if (!context) {
     throw new Error('useQuiz must be used within a QuizProvider');
   }
   return context;
-}
+};

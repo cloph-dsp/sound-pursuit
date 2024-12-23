@@ -43,7 +43,7 @@ export function useQuizState() {
       ...prev,
       selectedAnswer: index,
       isAnswered: true,
-      showingFeedback: true, // NEW: Show feedback
+      showingFeedback: true,
       feedback: isCorrect
         ? `Correct! +${prev.currentQuestion?.difficulty === 'easy' ? 10 : 
             prev.currentQuestion?.difficulty === 'medium' ? 20 : 30} points`
@@ -59,11 +59,18 @@ export function useQuizState() {
     }));
   }, []);
 
+  const handleAnswerSelect = (index: number, correctAnswerIndex: number, shuffledAnswers: string[]) => {
+    const isCorrect = index === correctAnswerIndex;
+    const correctAnswer = shuffledAnswers[correctAnswerIndex];
+    setAnswer(index, isCorrect, correctAnswer);
+  };
+
   return {
     ...state,
     updateQuestion,
     updateScore,
     setAnswer,
     clearFeedback,
+    handleAnswerSelect,
   };
 }
