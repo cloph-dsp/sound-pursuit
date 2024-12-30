@@ -1,70 +1,56 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import ScoreDisplay from './ScoreDisplay';
+import AnswerGrid from './AnswerGrid';
+import { useQuizContext } from '../context/QuizContext';
 
-interface QuizCardProps {
-  currentQuestion: Question | null;
-  selectedAnswer: number | null;
-  handleAnswerSelect: (answer: number) => void;
-  isAnswered: boolean;
-  feedback: string;
-  score: number;
-  difficulty: 'easy' | 'medium' | 'hard';
-}
+const QuizCard: React.FC = () => {
+  const quizContext = useQuizContext();
 
-export const QuizCard: React.FC<QuizCardProps> = ({
-  currentQuestion,
-  selectedAnswer,
-  handleAnswerSelect,
-  isAnswered,
-  feedback,
-  score,
-  difficulty,
-}) => {
-  const [shuffledAnswers, setShuffledAnswers] = useState<string[]>([]);
-  const [correctAnswerIndex, setCorrectAnswerIndex] = useState<number>(0);
+  if (!quizContext) {
+    return <div>Loading...</div>;
+  }
 
-  useEffect(() => {
-    if (currentQuestion) {
-      const answers = [...currentQuestion.answerChoices];
-      const correctIndex = currentQuestion.correctAnswer;
-      const correctAnswer = answers.splice(correctIndex, 1)[0];
-      const shuffled = [...answers].sort(() => Math.random() - 0.5);
-      const newCorrectIndex = Math.floor(Math.random() * (shuffled.length + 1));
-      shuffled.splice(newCorrectIndex, 0, correctAnswer);
-      setShuffledAnswers(shuffled);
-      setCorrectAnswerIndex(newCorrectIndex);
-    }
-  }, [currentQuestion]);
+  const {
+    currentQuestion,
+    selectedAnswer,
+    isAnswered,
+    feedback,
+    score,
+    difficulty,
+    progress,
+    timer,
+    handleAnswerClick,
+    handleTimerEnd
+  } = quizContext;
 
   if (!currentQuestion) {
-    return (
-      <div className="w-full p-6 bg-white rounded-lg shadow-lg">
-        <p className="text-center text-gray-600">Loading question...</p>
-      </div>
-    );
+    return null;
   }
 
   return (
-    <div className="w-full bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
-      <h2 className="text-lg font-bold mb-4 dark:text-gray-100">{currentQuestion.question}</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {shuffledAnswers.map((answer, index) => (
-          <button
-            key={index}
-            onClick={() => handleAnswerSelect(index)}
-            disabled={isAnswered}
-            className={`p-4 rounded-lg text-left font-medium border ${
-              isAnswered && index === correctAnswerIndex
-                ? 'bg-green-100 border-green-500 text-green-800'
-                : isAnswered && index === selectedAnswer
-                ? 'bg-red-100 border-red-500 text-red-800'
-                : 'bg-white border-gray-300 text-gray-700 hover:bg-gray-100 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100'
-            }`}
-          >
-            {answer}
-          </button>
-        ))}
-      </div>
-      {isAnswered && <div className="feedback mt-4 text-sm dark:text-gray-100">{feedback}</div>}
+    <div className="bg-white shadow-md rounded-lg p-6 max-w-md mx-auto sm:max-w-lg md:max-w-xl lg:max-w-2xl">
+      <ScoreDisplay
+        score={score}
+        difficulty={difficulty}
+        questionsNeeded={progress.questionsNeededForNextLevel}
+        timer={timer}
+        onTimerEnd={handleTimerEnd}
+      />
+      <h2 className="text-xl font-bold mb-4">{currentQuestion.question}</h2>
+      <AnswerGrid
+        answers={currentQuestion.answerChoices}
+        selectedAnswer={selectedAnswer}
+        isAnswered={isAnswered}
+        correctAnswer={currentQuestion.correctAnswer}
+        onSelect={handleAnswerClick}
+      />
+      {isAnswered && (
+        <div className="mt-4">
+          <p className={`text-center ${feedback.includes('Correct') ? 'text-green-500' : 'text-red-500'}`}>
+            {feedback}
+          </p>
+        </div>
+      )}
     </div>
   );
 };

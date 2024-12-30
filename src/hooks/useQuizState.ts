@@ -1,5 +1,6 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import type { Question } from '../types/quiz';
+import { shuffleQuestions } from '../utils/quiz';
 
 interface QuizState {
   currentQuestion: Question | null;
@@ -7,7 +8,8 @@ interface QuizState {
   isAnswered: boolean;
   feedback: string;
   score: number;
-  showingFeedback: boolean; // NEW: To control feedback display timing
+  showingFeedback: boolean;
+  timer: number;
 }
 
 export function useQuizState() {
@@ -17,19 +19,50 @@ export function useQuizState() {
     isAnswered: false,
     feedback: '',
     score: 0,
-    showingFeedback: false, // NEW
+    showingFeedback: false,
+    timer: 0,
   });
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setState(prev => ({ ...prev, timer: prev.timer + 1 }));
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   const updateQuestion = useCallback((question: Question | null) => {
-    setState({
-      currentQuestion: question,
-      selectedAnswer: null,
-      isAnswered: false,
-      feedback: '',
-      score: state.score,
-      showingFeedback: false, // Reset feedback state
-    });
-  }, [state.score]);
+    if (question) {
+      const { shuffled, newCorrectIndex } = shuffleQuestions(
+        question.answerChoices,
+        question.correctAnswer
+      );
+      
+      setState(prev => ({
+        ...prev,
+        currentQuestion: {
+          ...question,
+          answerChoices: shuffled,
+          correctAnswer: newCorrectIndex // Update with new index
+        },
+        selectedAnswer: null,
+        isAnswered: false,
+        feedback: '',
+        showingFeedback: false,
+        timer: 0,
+      }));
+    } else {
+      setState(prev => ({
+        ...prev,
+        currentQuestion: null,
+        selectedAnswer: null,
+        isAnswered: false,
+        feedback: '',
+        showingFeedback: false,
+        timer: 0,
+      }));
+    }
+  }, []);
 
   const updateScore = useCallback((points: number) => {
     setState(prev => ({
@@ -55,15 +88,23 @@ export function useQuizState() {
     setState(prev => ({
       ...prev,
       feedback: '',
-      showingFeedback: false, // NEW: Reset feedback flag
+      showingFeedback: false,
     }));
   }, []);
 
-  const handleAnswerSelect = (index: number, correctAnswerIndex: number, shuffledAnswers: string[]) => {
+  const handleAnswerSelect = useCallback((index: number, correctAnswerIndex: number, shuffledAnswers: string[]) => {
     const isCorrect = index === correctAnswerIndex;
     const correctAnswer = shuffledAnswers[correctAnswerIndex];
     setAnswer(index, isCorrect, correctAnswer);
-  };
+  }, [setAnswer]);
+
+  const handleTimerEnd = useCallback(() => {
+    if (state.currentQuestion && !state.isAnswered) {
+      const correctAnswerIndex = state.currentQuestion.correctAnswer;
+      const correctAnswer = state.currentQuestion.answerChoices[correctAnswerIndex];
+      setAnswer(-1, false, correctAnswer);
+    }
+  }, [state.currentQuestion, state.isAnswered, setAnswer]);
 
   return {
     ...state,
@@ -72,5 +113,6 @@ export function useQuizState() {
     setAnswer,
     clearFeedback,
     handleAnswerSelect,
+    handleTimerEnd,
   };
 }

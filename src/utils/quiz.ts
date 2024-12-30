@@ -1,24 +1,35 @@
 import { Question, QuizProgress } from '../types/quiz';
 
-export const QUESTIONS_TO_ADVANCE: number = 30;
+export const QUESTIONS_TO_ADVANCE = 30;
 
-export function getAvailableQuestions(
+export const getAvailableQuestions = (
   allQuestions: Question[],
   difficulty: 'easy' | 'medium' | 'hard',
-  answeredQuestions: Set<number> // Ensure it's a Set
-): Question[] {
+  answeredQuestions: Set<number>
+): Question[] => {
   return allQuestions.filter(
-    q => q.difficulty === difficulty && !answeredQuestions.has(q.id) // Use Set method
+    (question) =>
+      question.difficulty === difficulty && !answeredQuestions.has(question.id)
   );
-}
+};
 
-export function shuffleQuestions(questions: Question[]): Question[] {
-  const shuffled = [...questions];
+export function shuffleQuestions<T>(array: T[], correctAnswer: number): { 
+  shuffled: T[], 
+  newCorrectIndex: number 
+} {
+  const shuffled = [...array];
+  const correctItem = shuffled[correctAnswer];
+  
+  // Fisher-Yates shuffle
   for (let i = shuffled.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
   }
-  return shuffled;
+
+  // Find new position of correct answer
+  const newCorrectIndex = shuffled.findIndex(item => item === correctItem);
+  
+  return { shuffled, newCorrectIndex };
 }
 
 export function calculateNextLevel(progress: QuizProgress): 'easy' | 'medium' | 'hard' {
@@ -41,5 +52,6 @@ export function calculateNextLevel(progress: QuizProgress): 'easy' | 'medium' | 
 
 export function getQuestionsNeededForNextLevel(progress: QuizProgress): number {
   if (progress.currentLevel === 'hard') return 0;
-  return QUESTIONS_TO_ADVANCE - progress.correctAnswers;
+  const remaining = QUESTIONS_TO_ADVANCE - progress.correctAnswers;
+  return remaining > 0 ? remaining : 0;
 }

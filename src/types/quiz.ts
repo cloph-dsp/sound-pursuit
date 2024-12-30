@@ -1,7 +1,7 @@
 export interface Question {
   id: number;
   question: string;
-  answerChoices: string[]; 
+  answerChoices: string[];
   correctAnswer: number;
   difficulty: 'easy' | 'medium' | 'hard';
 }
@@ -13,14 +13,18 @@ export interface QuizProgress {
   questionsNeededForNextLevel: number;
 }
 
-
 export interface QuizState {
-  currentQuestionIndex: number;
-  score: number;
-  feedback: string;
+  progress: QuizProgress;
+  currentQuestion: Question | null;
   selectedAnswer: number | null;
   isAnswered: boolean;
-  level: number;
-  availableQuestions: number[];
-  progress: QuizProgress;
+  feedback: string;
+  score: number;
+  timer: number;
+}
+
+export interface QuizContextType {
+  handleTimerEnd: () => void;
+  currentQuestion: Question | null;
+  setAnswer: (index: number | null, isCorrect: boolean) => void;
 }

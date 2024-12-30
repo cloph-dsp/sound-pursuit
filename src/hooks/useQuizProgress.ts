@@ -4,18 +4,24 @@ import { QUESTIONS_TO_ADVANCE } from '../utils/quiz';
 
 export function useQuizProgress() {
   const [progress, setProgress] = useState<QuizProgress>({
-    answeredQuestions: new Set<number>(), // Initialize as a Set
+    answeredQuestions: [],
     correctAnswers: 0,
     currentLevel: 'easy',
     questionsNeededForNextLevel: QUESTIONS_TO_ADVANCE,
   });
 
   const updateProgress = useCallback((questionId: number, isCorrect: boolean) => {
-    setProgress((prev) => ({
-      ...prev,
-      answeredQuestions: new Set([...prev.answeredQuestions, questionId]), // Ensure it's a Set
-      correctAnswers: isCorrect ? prev.correctAnswers + 1 : prev.correctAnswers,
-    }));
+    setProgress((prev) => {
+      const newCorrectAnswers = isCorrect ? prev.correctAnswers + 1 : prev.correctAnswers;
+      const newQuestionsNeeded = QUESTIONS_TO_ADVANCE - newCorrectAnswers;
+
+      return {
+        ...prev,
+        answeredQuestions: [...prev.answeredQuestions, questionId],
+        correctAnswers: newCorrectAnswers,
+        questionsNeededForNextLevel: newQuestionsNeeded,
+      };
+    });
   }, []);
 
   const advanceLevel = useCallback((newLevel: 'easy' | 'medium' | 'hard') => {
@@ -30,7 +36,7 @@ export function useQuizProgress() {
   const resetAnsweredQuestionsForLevel = useCallback(() => {
     setProgress((prev) => ({
       ...prev,
-      answeredQuestions: new Set(),
+      answeredQuestions: [],
     }));
   }, []);
 
