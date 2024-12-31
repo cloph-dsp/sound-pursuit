@@ -579,8 +579,8 @@ export const easyQuestions: Question[] = [
   },
   {
     "id": 73,
-    "question": "What is the typical sample rate for video production audio?",
-    "answerChoices": ["48 kHz", "44.1 kHz", "96 kHz", "22.05 kHz"],
+    "question": "What is the Nyquist theorem related to in audio?",
+    "answerChoices": ["Sample rate", "Amplitude", "Dynamic range", "Bit depth"],
     "correctAnswer": 0,
     "difficulty": "easy",
     "category": "fundamentals"
@@ -635,11 +635,11 @@ export const easyQuestions: Question[] = [
   },
   {
     "id": 80,
-    "question": "What is the purpose of mastering in music production?",
-    "answerChoices": ["Prepare a track for distribution", "Record vocals", "Design sound effects", "Add a live performance feel"],
+    "question": "What is the role of dithering in digital audio processing?",
+    "answerChoices": ["Reduce quantization errors", "Boost low frequencies", "Add reverb", "Enhance stereo image"],
     "correctAnswer": 0,
     "difficulty": "easy",
-    "category": "production"
+    "category": "dsp"
   },
   {
     "id": 81,
@@ -763,8 +763,8 @@ export const easyQuestions: Question[] = [
   },
   {
     "id": 96,
-    "question": "What does 'panning' control?",
-    "answerChoices": ["Stereo placement of a sound", "Volume of a signal", "Duration of a sound", "Echo intensity"],
+    "question": "What is stereo imaging used for?",
+    "answerChoices": ["Enhancing sound placement", "Reducing noise", "Increasing amplitude", "Balancing frequencies"],
     "correctAnswer": 0,
     "difficulty": "easy",
     "category": "mixing"
@@ -923,8 +923,8 @@ export const easyQuestions: Question[] = [
   },
   {
     "id": 116,
-    "question": "What does an equalizer (EQ) adjust?",
-    "answerChoices": ["Frequency levels", "Volume", "Dynamic range", "Reverb"],
+    "question": "What is a parametric equalizer commonly used for?",
+    "answerChoices": ["Precisely adjusting specific frequencies", "Adding reverb", "Compressing audio", "Creating stereo effects"],
     "correctAnswer": 0,
     "difficulty": "easy",
     "category": "dsp"
@@ -1003,8 +1003,8 @@ export const easyQuestions: Question[] = [
   },
   {
     "id": 126,
-    "question": "What is the purpose of a pop filter?",
-    "answerChoices": ["Reduce plosive sounds", "Amplify high frequencies", "Add reverb", "Boost bass"],
+    "question": "What is the purpose of a windshield on a microphone?",
+    "answerChoices": ["Reduce wind noise", "Boost bass frequencies", "Add delay effects", "Reduce gain"],
     "correctAnswer": 0,
     "difficulty": "easy",
     "category": "hardware"
@@ -1035,11 +1035,11 @@ export const easyQuestions: Question[] = [
   },
   {
     "id": 130,
-    "question": "What is a transient in audio?",
-    "answerChoices": ["A sharp, short peak in sound", "A continuous tone", "Background noise", "A type of reverb effect"],
+    "question": "What does the term 'envelope' describe in audio synthesis?",
+    "answerChoices": ["Changes in amplitude over time", "Frequency response", "Dynamic range", "Reverb intensity"],
     "correctAnswer": 0,
     "difficulty": "easy",
-    "category": "fundamentals"
+    "category": "electronic music"
   },
   {
     "id": 131,
@@ -1075,16 +1075,16 @@ export const easyQuestions: Question[] = [
   },
   {
     "id": 135,
-    "question": "What is a DAW primarily used for?",
-    "answerChoices": ["Recording and editing audio", "Amplifying signals", "Reducing noise", "Monitoring live sound"],
+    "question": "Which feature is common in most DAWs?",
+    "answerChoices": ["Multi-track editing", "Real-time noise reduction", "Stereo monitoring", "Automatic mastering"],
     "correctAnswer": 0,
     "difficulty": "easy",
     "category": "software"
   },
   {
     "id": 136,
-    "question": "What does 'panning' control?",
-    "answerChoices": ["Placement of sound in the stereo field", "Reverb intensity", "Compression ratio", "Dynamic range"],
+    "question": "What does 'stereo field' refer to?",
+    "answerChoices": ["Left and right audio positioning", "High-frequency range", "Dynamic range of the mix", "Waveform symmetry"],
     "correctAnswer": 0,
     "difficulty": "easy",
     "category": "mixing"
@@ -1139,8 +1139,8 @@ export const easyQuestions: Question[] = [
   },
   {
     "id": 143,
-    "question": "Which of the following is an audio plugin format?",
-    "answerChoices": ["VST", "JPEG", "MIDI", "PDF"],
+    "question": "What is the difference between AU and VST plugins?",
+    "answerChoices": ["Compatibility with operating systems", "Type of effects provided", "Bit depth limitations", "Sample rate support"],
     "correctAnswer": 0,
     "difficulty": "easy",
     "category": "software"
@@ -1179,8 +1179,8 @@ export const easyQuestions: Question[] = [
   },
   {
     "id": 148,
-    "question": "What is the main function of an audio interface?",
-    "answerChoices": ["Convert analog to digital audio", "Generate MIDI data", "Boost volume levels", "Add reverb effects"],
+    "question": "What feature distinguishes audio interfaces from sound cards?",
+    "answerChoices": ["Professional-grade inputs", "Built-in reverb effects", "Stereo enhancement", "Wireless functionality"],
     "correctAnswer": 0,
     "difficulty": "easy",
     "category": "hardware"
@@ -1331,10 +1331,10 @@ export const easyQuestions: Question[] = [
   },
   {
     "id": 167,
-    "question": "What does a high-pass filter do?",
-    "answerChoices": ["Allows high frequencies to pass and reduces low frequencies", "Cuts high frequencies", "Boosts mid frequencies", "Increases dynamic range"],
+    "question": "What does a band-pass filter do?",
+    "answerChoices": ["Allows a specific range of frequencies to pass", "Cuts all frequencies", "Boosts low frequencies", "Increases dynamic range"],
     "correctAnswer": 0,
-    "difficulty": "easy",
+    "difficulty": "easy", 
     "category": "dsp"
   },
   {
@@ -1363,8 +1363,8 @@ export const easyQuestions: Question[] = [
   },
   {
     "id": 171,
-    "question": "What is the function of a crossover in audio systems?",
-    "answerChoices": ["Split audio signals into frequency bands", "Combine multiple signals", "Delay sound for synchronization", "Compress dynamic range"],
+    "question": "What is the role of a crossover in a sound system?",
+    "answerChoices": ["Split frequencies for different speakers", "Reduce phase issues", "Add time-based effects", "Equalize frequency levels"],
     "correctAnswer": 0,
     "difficulty": "easy",
     "category": "hardware"
@@ -1379,16 +1379,16 @@ export const easyQuestions: Question[] = [
   },
   {
     "id": 173,
-    "question": "Which of these is an open-source DAW?",
-    "answerChoices": ["Audacity", "Logic Pro", "Ableton Live", "Cubase"],
+    "question": "What is an audio spectrum analyzer used for?",
+    "answerChoices": ["Visualize frequency distribution", "Compress audio signals", "Enhance stereo imaging", "Reduce clipping"],
     "correctAnswer": 0,
     "difficulty": "easy",
-    "category": "software"
+    "category": "dsp"
   },
   {
     "id": 174,
-    "question": "What does 'binaural audio' aim to replicate?",
-    "answerChoices": ["3D sound perception", "Mono audio playback", "High-frequency distortion", "Stereo compression"],
+    "question": "What is the primary use of binaural audio?",
+    "answerChoices": ["Simulate 3D sound", "Enhance bass frequencies", "Optimize for mono playback", "Reduce latency in live sound"],
     "correctAnswer": 0,
     "difficulty": "easy",
     "category": "psychoacoustics"
@@ -1435,16 +1435,16 @@ export const easyQuestions: Question[] = [
   },
   {
     "id": 180,
-    "question": "What does 'pan' control in audio mixing?",
-    "answerChoices": ["Placement of sound in the stereo field", "Volume level", "Dynamic range", "Reverb intensity"],
+    "question": "What is the primary function of a pan pot on a mixing console?",
+    "answerChoices": ["Control stereo placement of sound", "Adjust frequency levels", "Boost signal gain", "Reduce echo"],
     "correctAnswer": 0,
     "difficulty": "easy",
     "category": "mixing"
   },
   {
     "id": 181,
-    "question": "What is the purpose of a pop filter?",
-    "answerChoices": ["Reduce plosive sounds during recording", "Increase microphone sensitivity", "Add reverb to vocals", "Sync audio signals"],
+    "question": "What does a shock mount on a microphone stand help with?",
+    "answerChoices": ["Isolate vibrations", "Reduce wind noise", "Enhance vocal clarity", "Add reverb effects"],
     "correctAnswer": 0,
     "difficulty": "easy",
     "category": "hardware"
@@ -1459,8 +1459,8 @@ export const easyQuestions: Question[] = [
   },
   {
     "id": 183,
-    "question": "What does 'decay time' refer to in reverb?",
-    "answerChoices": ["The time for reverb to fade out", "The frequency of reflections", "The width of the stereo effect", "The level of compression applied"],
+    "question": "What does reverb decay time measure?",
+    "answerChoices": ["Duration for reflections to fade", "Amount of initial sound energy", "Frequency of reflections", "Amplitude of early reflections"],
     "correctAnswer": 0,
     "difficulty": "easy",
     "category": "dsp"
@@ -1523,8 +1523,8 @@ export const easyQuestions: Question[] = [
   },
   {
     "id": 191,
-    "question": "What is 'white noise'?",
-    "answerChoices": ["Sound with equal energy at all frequencies", "A low-frequency hum", "A distorted audio signal", "A type of reverb effect"],
+    "question": "What type of sound does pink noise produce?",
+    "answerChoices": ["Equal energy per octave", "Equal energy at all frequencies", "High-frequency dominant sound", "Low-frequency dominant sound"],
     "correctAnswer": 0,
     "difficulty": "easy",
     "category": "fundamentals"
@@ -1539,6 +1539,14 @@ export const easyQuestions: Question[] = [
   },
   {
     "id": 193,
+    "question": "What is the goal of dynamic range compression in mastering?",
+    "answerChoices": ["Reduce loudness variation", "Increase stereo width", "Boost overall frequency range", "Add harmonic distortion"],
+    "correctAnswer": 0,
+    "difficulty": "easy",
+    "category": "production"
+  },
+  {
+    "id": 194,
     "question": "What is the purpose of mastering in audio production?",
     "answerChoices": ["Prepare a track for distribution", "Record vocals", "Add effects to individual tracks", "Adjust stereo panning"],
     "correctAnswer": 0,
@@ -1546,7 +1554,7 @@ export const easyQuestions: Question[] = [
     "category": "production"
   },
   {
-    "id": 194,
+    "id": 195,
     "question": "What is the purpose of an equalizer?",
     "answerChoices": ["Adjust frequency levels in audio", "Reduce clipping", "Increase stereo width", "Add reverb effects"],
     "correctAnswer": 0,
@@ -1554,17 +1562,9 @@ export const easyQuestions: Question[] = [
     "category": "dsp"
   },
   {
-    "id": 195,
-    "question": "What does 'attack' refer to in audio dynamics?",
-    "answerChoices": ["The time it takes for a sound to reach its peak", "The delay of a reverb effect", "The volume of a track", "The stereo placement of a sound"],
-    "correctAnswer": 0,
-    "difficulty": "easy",
-    "category": "dsp"
-  },
-  {
     "id": 196,
-    "question": "What does the term 'loop' refer to in music production?",
-    "answerChoices": ["A repeated section of music or audio", "An audio track with reverb", "A preset EQ setting", "A single stereo channel"],
+    "question": "What is the primary use of looping in DAWs?",
+    "answerChoices": ["Repeat sections for arrangement", "Boost amplitude", "Reduce noise", "Add time-based effects"],
     "correctAnswer": 0,
     "difficulty": "easy",
     "category": "software"
@@ -1683,8 +1683,8 @@ export const easyQuestions: Question[] = [
   },
   {
     "id": 211,
-    "question": "What does an equalizer (EQ) do?",
-    "answerChoices": ["Adjusts frequency levels", "Adds delay effects", "Compresses audio signals", "Synchronizes MIDI devices"],
+    "question": "What is a graphic equalizer typically used for?",
+    "answerChoices": ["Adjust frequency bands visually", "Add delay effects", "Compress dynamic range", "Reduce stereo width"],
     "correctAnswer": 0,
     "difficulty": "easy",
     "category": "dsp"
@@ -1707,8 +1707,8 @@ export const easyQuestions: Question[] = [
   },
   {
     "id": 214,
-    "question": "What is the purpose of mastering in audio production?",
-    "answerChoices": ["Optimize a mix for distribution", "Add effects to vocals", "Reduce noise in recordings", "Sync tracks with MIDI"],
+    "question": "What is a loudness maximizer in mastering?",
+    "answerChoices": ["Increase perceived volume", "Boost high frequencies", "Reduce distortion", "Add time-based effects"],
     "correctAnswer": 0,
     "difficulty": "easy",
     "category": "production"
@@ -1739,8 +1739,8 @@ export const easyQuestions: Question[] = [
   },
   {
     "id": 218,
-    "question": "What is the primary purpose of a pop filter?",
-    "answerChoices": ["Reduce plosive sounds during vocal recordings", "Boost midrange frequencies", "Add reverb to vocals", "Compress the signal"],
+    "question": "What is the primary use of a windscreen in outdoor recordings?",
+    "answerChoices": ["Reduce wind interference", "Add clarity to vocals", "Boost low frequencies", "Control microphone gain"],
     "correctAnswer": 0,
     "difficulty": "easy",
     "category": "hardware"
@@ -1755,8 +1755,8 @@ export const easyQuestions: Question[] = [
   },
   {
     "id": 220,
-    "question": "What is white noise?",
-    "answerChoices": ["Sound with equal energy across all frequencies", "A low-frequency hum", "A distorted signal", "A type of stereo effect"],
+    "question": "What is the difference between pink noise and white noise?",
+    "answerChoices": ["Pink noise has equal energy per octave", "Pink noise is louder", "White noise is less harsh", "White noise has equal energy per octave"],
     "correctAnswer": 0,
     "difficulty": "easy",
     "category": "fundamentals"
@@ -1779,8 +1779,8 @@ export const easyQuestions: Question[] = [
   },
   {
     "id": 223,
-    "question": "What is the function of a crossover in audio systems?",
-    "answerChoices": ["Divide audio signals into frequency bands", "Boost low frequencies", "Add effects to a signal", "Delay sound for synchronization"],
+    "question": "What is the function of a subwoofer in a speaker system?",
+    "answerChoices": ["Reproduce low frequencies", "Enhance midrange clarity", "Add high-frequency detail", "Reduce background noise"],
     "correctAnswer": 0,
     "difficulty": "easy",
     "category": "hardware"
@@ -1819,31 +1819,31 @@ export const easyQuestions: Question[] = [
   },
   {
     "id": 228,
-    "question": "What is a transient in audio?",
-    "answerChoices": ["A short, sharp sound peak", "A constant tone", "Background noise", "A reverb tail"],
+    "question": "What does transient shaping allow in audio production?",
+    "answerChoices": ["Adjust attack and sustain", "Compress frequency bands", "Add stereo width", "Boost dynamic range"],
     "correctAnswer": 0,
     "difficulty": "easy",
-    "category": "fundamentals"
+    "category": "dsp"
   },
   {
     "id": 229,
-    "question": "What does a reverb effect simulate?",
-    "answerChoices": ["Reflections of sound in a space", "Distortion of a signal", "Low-frequency oscillations", "High-pass filtering"],
+    "question": "What is a convolution reverb used for?",
+    "answerChoices": ["Simulate specific spaces", "Boost signal gain", "Reduce feedback", "Create artificial delay"],
     "correctAnswer": 0,
     "difficulty": "easy",
     "category": "dsp"
   },
   {
     "id": 230,
-    "question": "What does 'clipping' in audio refer to?",
-    "answerChoices": ["Distortion caused by exceeding signal limits", "Cutting unwanted frequencies", "Adding reverb effects", "Adjusting stereo width"],
+    "question": "What causes clipping in digital audio systems?",
+    "answerChoices": ["Exceeding signal limits", "Low bit depth", "Poor stereo imaging", "High sample rate"],
     "correctAnswer": 0,
     "difficulty": "easy",
     "category": "fundamentals"
   },
   {
     "id": 231,
-    "question": "What does 'bit depth' determine in digital audio?",
+    "question": "What does the term 'bit depth' determine in digital audio?",
     "answerChoices": ["Dynamic range of the audio", "Stereo width", "Frequency range", "Playback speed"],
     "correctAnswer": 0,
     "difficulty": "easy",
@@ -1851,16 +1851,16 @@ export const easyQuestions: Question[] = [
   },
   {
     "id": 232,
-    "question": "What is the purpose of a metronome in music production?",
-    "answerChoices": ["Keep a consistent tempo", "Adjust pitch", "Add reverb", "Reduce noise"],
+    "question": "What is the purpose of tempo maps in DAWs?",
+    "answerChoices": ["Sync tempo changes in a track", "Increase playback speed", "Reduce audio latency", "Add time-stretching effects"],
     "correctAnswer": 0,
     "difficulty": "easy",
     "category": "software"
   },
   {
     "id": 233,
-    "question": "What does 'stereo' mean in audio production?",
-    "answerChoices": ["Two audio channels", "Single audio channel", "High-quality sound", "Dynamic sound"],
+    "question": "What is the primary advantage of stereo audio over mono?",
+    "answerChoices": ["Improved spatial sound placement", "Increased frequency response", "Enhanced dynamic range", "Reduced phase issues"],
     "correctAnswer": 0,
     "difficulty": "easy",
     "category": "fundamentals"
@@ -1883,8 +1883,8 @@ export const easyQuestions: Question[] = [
   },
   {
     "id": 236,
-    "question": "What does a noise gate do?",
-    "answerChoices": ["Silence sounds below a set threshold", "Boost low frequencies", "Add echo to audio", "Increase dynamic range"],
+    "question": "What is a noise gate's threshold used for?",
+    "answerChoices": ["Determine when the gate opens", "Reduce distortion", "Increase gain", "Control reverb tails"],
     "correctAnswer": 0,
     "difficulty": "easy",
     "category": "dsp"
@@ -1899,11 +1899,11 @@ export const easyQuestions: Question[] = [
   },
   {
     "id": 238,
-    "question": "What does 'attack' refer to in dynamics processing?",
-    "answerChoices": ["Time it takes for a sound to reach its peak", "The stereo width of a sound", "The frequency range of the signal", "The volume of the track"],
+    "question": "What does 'attack' control in an envelope generator?",
+    "answerChoices": ["Time to reach peak amplitude", "Time for the signal to decay", "Amplitude of the signal", "Frequency of oscillation"],
     "correctAnswer": 0,
     "difficulty": "easy",
-    "category": "dsp"
+    "category": "electronic music"
   },
   {
     "id": 239,
@@ -1915,8 +1915,8 @@ export const easyQuestions: Question[] = [
   },
   {
     "id": 240,
-    "question": "What is the purpose of a DI box?",
-    "answerChoices": ["Convert high-impedance signals to low-impedance", "Add reverb to vocals", "Boost low frequencies", "Compress the dynamic range"],
+    "question": "What is the primary use of a DI box in live sound?",
+    "answerChoices": ["Convert unbalanced signals to balanced", "Add reverb", "Increase microphone gain", "Reduce phase issues"],
     "correctAnswer": 0,
     "difficulty": "easy",
     "category": "hardware"
@@ -1939,8 +1939,8 @@ export const easyQuestions: Question[] = [
   },
   {
     "id": 243,
-    "question": "What is the purpose of a fader on a mixing console?",
-    "answerChoices": ["Control volume levels", "Add effects", "Adjust stereo width", "Apply compression"],
+    "question": "What is the primary purpose of a channel fader on a mixer?",
+    "answerChoices": ["Control the track's volume", "Add EQ", "Reduce noise", "Apply effects"],
     "correctAnswer": 0,
     "difficulty": "easy",
     "category": "hardware"
@@ -1955,8 +1955,8 @@ export const easyQuestions: Question[] = [
   },
   {
     "id": 245,
-    "question": "What is the function of a transient shaper?",
-    "answerChoices": ["Control attack and sustain of a sound", "Boost low frequencies", "Compress high frequencies", "Apply reverb effects"],
+    "question": "What is transient enhancement used for in audio production?",
+    "answerChoices": ["Make attacks more pronounced", "Reduce decay time", "Add delay effects", "Enhance stereo width"],
     "correctAnswer": 0,
     "difficulty": "easy",
     "category": "dsp"
@@ -2003,8 +2003,8 @@ export const easyQuestions: Question[] = [
   },
   {
     "id": 251,
-    "question": "What is the speed of sound in air at room temperature?",
-    "answerChoices": ["343 m/s", "300 m/s", "400 m/s", "500 m/s"],
+    "question": "How does temperature affect the speed of sound in air?",
+    "answerChoices": ["Higher temperature increases speed", "Higher temperature decreases speed", "Speed remains constant", "Speed is independent of temperature"],
     "correctAnswer": 0,
     "difficulty": "easy",
     "category": "fundamentals"
@@ -2227,9 +2227,9 @@ export const easyQuestions: Question[] = [
   },
   {
     "id": 279,
-    "question": "What happens to sound waves when they enter a less dense medium?",
-    "answerChoices": ["Their speed decreases", "Their speed increases", "Their amplitude increases", "Their frequency decreases"],
-    "correctAnswer": 1,
+    "question": "What happens to sound waves in a vacuum?",
+    "answerChoices": ["They cannot propagate", "They travel faster", "They lose amplitude", "They increase in frequency"],
+    "correctAnswer": 0,
     "difficulty": "easy",
     "category": "physics"
   },

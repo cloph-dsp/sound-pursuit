@@ -4,6 +4,7 @@ export interface Question {
   answerChoices: string[];
   correctAnswer: number;
   difficulty: 'easy' | 'medium' | 'hard';
+  category: string;
 }
 
 export interface QuizProgress {
@@ -21,6 +22,7 @@ export interface QuizState {
   feedback: string;
   score: number;
   timer: number;
+  additionalQuestionsNeeded: number;
 }
 
 export interface QuizContextType {

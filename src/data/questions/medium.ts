@@ -1,4 +1,4 @@
-import { Question } from '../types/quiz';
+import { Question } from '../../types/quiz';
 
 const MEDIUM_BASE_ID = 300; // Starting ID for medium questions
 
@@ -652,5 +652,1305 @@ export const mediumQuestions: Question[] = [
     "correctAnswer": 0,
     "difficulty": "medium",
     "category": "hardware"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 51,
+    "question": "What is the function of a transient shaper in audio processing?",
+    "answerChoices": [
+      "Enhance or reduce attack and sustain of a signal",
+      "Apply reverb to transients",
+      "Remove low frequencies",
+      "Compress the dynamic range"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "dsp"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 52,
+    "question": "Which principle explains why lower frequencies travel farther than higher frequencies?",
+    "answerChoices": [
+      "Lower frequencies are less affected by air absorption",
+      "Higher frequencies have greater energy loss during reflection",
+      "Higher frequencies diffract more",
+      "Lower frequencies have shorter wavelengths"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "physics"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 53,
+    "question": "What is a primary characteristic of standing waves in a room?",
+    "answerChoices": [
+      "They cause peaks and nulls in specific frequencies",
+      "They amplify low frequencies evenly",
+      "They eliminate all reflections",
+      "They enhance stereo imaging"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "acoustics"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 54,
+    "question": "What is the main function of a high-shelf EQ filter?",
+    "answerChoices": [
+      "Boost or cut high frequencies above a certain point",
+      "Eliminate high frequencies",
+      "Boost midrange frequencies",
+      "Reduce phase issues in a mix"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "dsp"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 55,
+    "question": "What does the term 'diffusion' refer to in room acoustics?",
+    "answerChoices": [
+      "The scattering of sound waves to reduce echoes",
+      "The absorption of sound waves by materials",
+      "The increase in sound intensity due to reflection",
+      "The cancellation of sound waves"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "acoustics"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 56,
+    "question": "What is the primary purpose of using a ground loop isolator?",
+    "answerChoices": [
+      "Eliminate hum caused by ground loops",
+      "Enhance stereo width",
+      "Boost low frequencies",
+      "Reduce harmonic distortion"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "hardware"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 57,
+    "question": "What is the difference between pre-fader and post-fader sends in a mixing console?",
+    "answerChoices": [
+      "Pre-fader sends are unaffected by the fader position",
+      "Post-fader sends bypass the EQ section",
+      "Pre-fader sends add reverb by default",
+      "Post-fader sends control the pan position"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "mixing"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 58,
+    "question": "What is harmonic distortion?",
+    "answerChoices": [
+      "Addition of harmonic frequencies to the original signal",
+      "Reduction of noise in high frequencies",
+      "Phase shifts caused by multi-microphone setups",
+      "Cancellation of lower frequencies in a mix"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "physics"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 59,
+    "question": "What does the term 'signal-to-noise ratio' (SNR) refer to?",
+    "answerChoices": [
+      "The level of the desired signal compared to background noise",
+      "The frequency range of a system",
+      "The dynamic range of an audio track",
+      "The phase alignment between two signals"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "hardware"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 60,
+    "question": "What is the significance of the -3 dB point in a filter's frequency response?",
+    "answerChoices": [
+      "It marks the cutoff frequency",
+      "It indicates the maximum gain of the filter",
+      "It defines the filter's resonance",
+      "It measures the filter's phase shift"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "dsp"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 61,
+    "question": "What is the primary difference between linear-phase and minimum-phase EQ?",
+    "answerChoices": [
+      "Linear-phase EQ avoids phase shifts",
+      "Linear-phase EQ increases amplitude",
+      "Minimum-phase EQ has a fixed Q value",
+      "Minimum-phase EQ always cuts frequencies"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "dsp"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 62,
+    "question": "What is the function of an omnidirectional microphone?",
+    "answerChoices": [
+      "Capture sound equally from all directions",
+      "Reject sound from the rear",
+      "Emphasize low frequencies",
+      "Enhance stereo imaging"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "hardware"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 63,
+    "question": "What is a common issue when sampling audio at a rate below the Nyquist frequency?",
+    "answerChoices": [
+      "Aliasing",
+      "Phase distortion",
+      "High noise floor",
+      "Over-compression"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "fundamentals"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 64,
+    "question": "What is the purpose of bass trapping in a studio?",
+    "answerChoices": [
+      "Absorb low-frequency standing waves",
+      "Enhance the clarity of high frequencies",
+      "Reflect sound evenly across the room",
+      "Increase the decay time of low frequencies"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "acoustics"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 65,
+    "question": "What does the term 'flutter echo' refer to?",
+    "answerChoices": [
+      "Rapid, repeated reflections between parallel surfaces",
+      "Amplified low-frequency resonance",
+      "Cancellation of high frequencies",
+      "Distortion from high input levels"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "acoustics"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 66,
+    "question": "What is intermodulation distortion?",
+    "answerChoices": [
+      "Nonlinear interaction between two frequencies creating additional frequencies",
+      "Phase shifts caused by delayed signals",
+      "Cancellation of sound waves in a room",
+      "Amplification of harmonics above 10 kHz"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "physics"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 67,
+    "question": "What is the relationship between frequency and pitch?",
+    "answerChoices": [
+      "Higher frequency corresponds to higher pitch",
+      "Lower frequency corresponds to higher pitch",
+      "Pitch is independent of frequency",
+      "Frequency only affects amplitude"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "psychoacoustics"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 68,
+    "question": "Which acoustic treatment is designed to scatter sound waves evenly?",
+    "answerChoices": [
+      "Diffusers",
+      "Bass traps",
+      "Absorbers",
+      "Reflectors"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "acoustics"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 69,
+    "question": "What is the purpose of using a brickwall limiter?",
+    "answerChoices": [
+      "Prevent any signal from exceeding the set threshold",
+      "Eliminate low-frequency noise",
+      "Enhance stereo imaging",
+      "Reduce phase shifts in the mix"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "dsp"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 70,
+    "question": "What is the function of a pink noise generator in audio testing?",
+    "answerChoices": [
+      "Provide a test signal with equal energy per octave",
+      "Measure reverberation time",
+      "Simulate broadband sound",
+      "Eliminate feedback in live sound"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "physics"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 71,
+    "question": "What is a formant in audio terms?",
+    "answerChoices": [
+      "A resonant frequency of the vocal tract",
+      "A harmonic of the fundamental frequency",
+      "The amplitude of a sound wave",
+      "The duration of a reverb tail"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "psychoacoustics"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 72,
+    "question": "What is the difference between delay and reverb effects?",
+    "answerChoices": [
+      "Delay produces distinct repeats; reverb creates a wash of reflections",
+      "Delay boosts low frequencies; reverb emphasizes high frequencies",
+      "Delay reduces background noise; reverb adds harmonic richness",
+      "Delay is used for vocals; reverb is used for drums"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "dsp"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 73,
+    "question": "What is the function of an aux send in a mixer?",
+    "answerChoices": [
+      "Route signals to external effects or monitors",
+      "Boost the gain of a specific channel",
+      "Control panning in a stereo field",
+      "Reduce phase cancellation"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "mixing"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 74,
+    "question": "What is the advantage of a ribbon microphone?",
+    "answerChoices": [
+      "Smooth high-frequency response",
+      "High durability for live use",
+      "Captures sound equally from all directions",
+      "Works without a preamp"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "hardware"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 75,
+    "question": "What is the primary function of a de-esser?",
+    "answerChoices": [
+      "Reduce sibilant frequencies in vocals",
+      "Eliminate low-frequency hum",
+      "Boost midrange clarity",
+      "Add reverb to the signal"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "dsp"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 76,
+    "question": "What is the function of a notch filter?",
+    "answerChoices": [
+      "Attenuate a very narrow frequency band",
+      "Boost all frequencies below a certain point",
+      "Create phase shifts in a signal",
+      "Compress high-frequency content"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "dsp"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 77,
+    "question": "What does the term 'reverberation time' (RT60) refer to?",
+    "answerChoices": [
+      "The time it takes for sound to decay by 60 dB",
+      "The time between distinct echoes",
+      "The delay between direct and reflected sound",
+      "The phase shift introduced by reflections"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "acoustics"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 78,
+    "question": "Which microphone type is most sensitive to wind noise and plosives?",
+    "answerChoices": [
+      "Ribbon microphone",
+      "Dynamic microphone",
+      "Condenser microphone",
+      "Contact microphone"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "hardware"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 79,
+    "question": "What is the primary advantage of a line array speaker system in live sound?",
+    "answerChoices": [
+      "Uniform sound coverage over long distances",
+      "Enhanced low-frequency response",
+      "Improved signal-to-noise ratio",
+      "Reduced phase cancellation"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "hardware"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 80,
+    "question": "What is the purpose of a pre-delay setting in a reverb processor?",
+    "answerChoices": [
+      "Control the time before the onset of reverberation",
+      "Reduce high-frequency reflections",
+      "Increase the tail of the reverb",
+      "Adjust the stereo width of the signal"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "dsp"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 81,
+    "question": "What does the term 'inverse square law' describe in acoustics?",
+    "answerChoices": [
+      "Sound intensity decreases proportionally to the square of the distance from the source",
+      "Low frequencies reflect more efficiently than high frequencies",
+      "High frequencies travel faster than low frequencies",
+      "Sound waves diffract more around smaller obstacles"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "physics"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 82,
+    "question": "What is a comb filter often associated with?",
+    "answerChoices": [
+      "Interference caused by delayed versions of the same signal",
+      "Increased low-frequency response",
+      "Reduction of phase distortion",
+      "Amplification of high frequencies"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "acoustics"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 83,
+    "question": "Which type of EQ is most suitable for surgical adjustments in a mix?",
+    "answerChoices": [
+      "Parametric EQ",
+      "Graphic EQ",
+      "Shelving EQ",
+      "Dynamic EQ"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "dsp"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 84,
+    "question": "What is the primary function of a pop filter?",
+    "answerChoices": [
+      "Reduce plosives and wind noise in recordings",
+      "Increase the gain of low-frequency content",
+      "Apply high-pass filtering to the microphone signal",
+      "Enhance the clarity of high frequencies"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "hardware"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 85,
+    "question": "What is the Fletcher-Munson curve used to illustrate?",
+    "answerChoices": [
+      "Human sensitivity to frequencies at different loudness levels",
+      "The decay time of sound in a given space",
+      "The interference patterns of overlapping sound waves",
+      "The absorption characteristics of acoustic panels"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "psychoacoustics"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 86,
+    "question": "What does a transient shaper adjust in an audio signal?",
+    "answerChoices": [
+      "The attack and sustain characteristics",
+      "The pitch of the waveform",
+      "The harmonic content of the signal",
+      "The stereo imaging of the track"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "dsp"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 87,
+    "question": "What does 'critical distance' mean in acoustics?",
+    "answerChoices": [
+      "The distance at which direct sound equals reflected sound in level",
+      "The point at which a signal starts to distort",
+      "The maximum distance a microphone can effectively capture sound",
+      "The area in a room with the highest low-frequency energy"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "acoustics"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 88,
+    "question": "What is an important consideration when placing microphones in a stereo X/Y configuration?",
+    "answerChoices": [
+      "Both microphones must have coincident capsules",
+      "The microphones should be spaced at least 1 meter apart",
+      "The angle between the microphones must exceed 120 degrees",
+      "Dynamic microphones are preferred for this setup"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "hardware"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 89,
+    "question": "What is the main benefit of using a cardioid polar pattern microphone?",
+    "answerChoices": [
+      "It rejects sound from the rear and sides",
+      "It captures sound equally from all directions",
+      "It enhances low-frequency response",
+      "It requires no phantom power"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "hardware"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 90,
+    "question": "What is the role of the Q factor in a parametric EQ?",
+    "answerChoices": [
+      "Control the bandwidth around the selected frequency",
+      "Boost the output gain of the signal",
+      "Enhance the reverb tails in the mix",
+      "Compress the midrange frequencies"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "dsp"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 91,
+    "question": "What is aliasing in digital audio?",
+    "answerChoices": [
+      "A distortion caused by undersampling",
+      "A delay effect caused by phase shifts",
+      "A harmonic added to the original signal",
+      "An unintended increase in dynamic range"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "fundamentals"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 92,
+    "question": "Which characteristic is specific to ribbon microphones?",
+    "answerChoices": [
+      "Smooth and natural high-frequency response",
+      "High durability in live sound environments",
+      "Wide omnidirectional pickup pattern",
+      "Strong proximity effect resistance"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "hardware"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 93,
+    "question": "What is the purpose of using bass traps in a studio?",
+    "answerChoices": [
+      "Reduce standing waves and low-frequency buildup",
+      "Enhance stereo imaging in the mix",
+      "Increase the reverberation time of low frequencies",
+      "Boost midrange clarity"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "acoustics"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 94,
+    "question": "What is the significance of the Nyquist frequency in digital audio?",
+    "answerChoices": [
+      "It is half the sampling rate and determines the highest frequency that can be recorded",
+      "It is twice the sampling rate and affects dynamic range",
+      "It is the highest amplitude a signal can achieve",
+      "It determines the stereo imaging of a digital track"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "fundamentals"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 95,
+    "question": "What is the primary function of a convolution reverb?",
+    "answerChoices": [
+      "Simulate real acoustic spaces using impulse responses",
+      "Enhance artificial reverb effects",
+      "Boost midrange frequencies in a mix",
+      "Control the decay time of high frequencies"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "dsp"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 96,
+    "question": "What does the term 'masking' refer to in psychoacoustics?",
+    "answerChoices": [
+      "A louder sound making a quieter sound less audible",
+      "The reduction of high frequencies by low frequencies",
+      "A phase shift that cancels specific frequencies",
+      "The increase in perceived volume from stereo widening"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "psychoacoustics"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 97,
+    "question": "What is the primary advantage of using a balanced audio cable?",
+    "answerChoices": [
+      "It reduces noise and interference in long cable runs",
+      "It enhances the frequency response of the signal",
+      "It eliminates the need for phantom power",
+      "It provides superior stereo imaging"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "hardware"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 98,
+    "question": "What does a graphic equalizer primarily allow for?",
+    "answerChoices": [
+      "Adjusting fixed frequency bands",
+      "Precisely controlling the Q factor",
+      "Adding harmonic distortion",
+      "Reducing the overall noise floor"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "dsp"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 99,
+    "question": "What is the function of an envelope generator in sound synthesis?",
+    "answerChoices": [
+      "Control parameters like amplitude over time",
+      "Generate subharmonic frequencies",
+      "Boost midrange content in a waveform",
+      "Apply a stereo widening effect"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "electronic music"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 100,
+    "question": "What does the Haas effect describe?",
+    "answerChoices": [
+      "The perception of sound placement based on timing differences between ears",
+      "The interference caused by overlapping sound waves",
+      "The reflection of sound waves in large spaces",
+      "The amplification of low frequencies due to standing waves"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "psychoacoustics"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 101,
+    "question": "Who is considered the inventor of the phonograph?",
+    "answerChoices": [
+      "Thomas Edison",
+      "Alexander Graham Bell",
+      "Emile Berliner",
+      "Nikola Tesla"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "history"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 102,
+    "question": "What is the significance of the Theremin in electronic music history?",
+    "answerChoices": [
+      "It is one of the earliest electronic instruments played without physical contact",
+      "It was the first instrument to use oscillators for sound generation",
+      "It introduced voltage-controlled oscillators to music",
+      "It was the first instrument to integrate digital synthesis"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "electronic music"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 103,
+    "question": "What does the term 'granular synthesis' refer to?",
+    "answerChoices": [
+      "The process of manipulating small segments of sound (grains)",
+      "Synthesizing sound based on frequency modulation",
+      "Creating sound by layering harmonic overtones",
+      "Using physical modeling to generate sounds"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "sound design"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 104,
+    "question": "What is the purpose of foley in film production?",
+    "answerChoices": [
+      "To recreate everyday sound effects in sync with the visuals",
+      "To enhance the spatial audio effects in a mix",
+      "To provide background ambience for scenes",
+      "To automate synchronization of sound to dialogue"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "soundstudies"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 105,
+    "question": "What innovation is associated with Emile Berliner?",
+    "answerChoices": [
+      "The invention of the flat disc record",
+      "The development of the first magnetic tape recorder",
+      "The creation of the first digital sampler",
+      "The introduction of stereo sound recording"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "history"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 106,
+    "question": "What is the main principle behind additive synthesis?",
+    "answerChoices": [
+      "Combining multiple sine waves to create complex sounds",
+      "Removing specific frequencies from a sound",
+      "Generating sound using frequency modulation",
+      "Layering sound grains to produce textures"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "sound design"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 107,
+    "question": "What is the role of sideband frequencies in FM synthesis?",
+    "answerChoices": [
+      "They contribute to the timbre of the sound",
+      "They determine the pitch of the carrier signal",
+      "They control the amplitude envelope",
+      "They define the stereo field of the sound"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "sound design"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 108,
+    "question": "What does the term 'spectral analysis' mean in audio?",
+    "answerChoices": [
+      "Analyzing the frequency content of a sound over time",
+      "Measuring the amplitude of a signal",
+      "Assessing the stereo field of a mix",
+      "Determining the phase relationships of audio channels"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "software"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 109,
+    "question": "What was the purpose of the RCA Mark II synthesizer?",
+    "answerChoices": [
+      "To create compositions using voltage-controlled modules",
+      "To replicate the sound of acoustic instruments",
+      "To integrate tape manipulation with synthesis",
+      "To provide the first polyphonic keyboard interface"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "history"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 110,
+    "question": "What does the term 'DAW' stand for?",
+    "answerChoices": [
+      "Digital Audio Workstation",
+      "Dynamic Amplitude Window",
+      "Digital Analog Workflow",
+      "Distributed Audio Workspace"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "software"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 111,
+    "question": "Which of these is an example of early musique concrète?",
+    "answerChoices": [
+      "Pierre Schaeffer’s 'Étude aux chemins de fer'",
+      "Karlheinz Stockhausen's 'Gesang der Jünglinge'",
+      "John Cage's '4'33\"'",
+      "Steve Reich's 'Come Out'"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "electroacoustics"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 112,
+    "question": "What is the role of an audio codec?",
+    "answerChoices": [
+      "Compress and decompress digital audio data",
+      "Control audio latency in real-time applications",
+      "Synchronize MIDI with audio tracks",
+      "Add spatial effects to stereo mixes"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "software"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 113,
+    "question": "What does the term 'oscillator drift' refer to?",
+    "answerChoices": [
+      "Unstable tuning in analog synthesizers",
+      "Phase cancellation in stereo mixes",
+      "Distortion caused by overloaded circuits",
+      "Frequency modulation by low-pass filters"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "electronic music"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 114,
+    "question": "What does the term 'formant shifting' refer to?",
+    "answerChoices": [
+      "Altering the resonant frequencies of a sound without affecting its pitch",
+      "Increasing the fundamental frequency of a sound",
+      "Compressing the dynamic range of a vocal recording",
+      "Adding reverb to enhance spatial characteristics"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "psychoacoustics"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 115,
+    "question": "What is the purpose of MIDI CC (Continuous Controller) messages?",
+    "answerChoices": [
+      "Transmit real-time control data like modulation or volume",
+      "Synchronize tempo across multiple devices",
+      "Control the audio latency of MIDI tracks",
+      "Replace note data in MIDI sequences"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "software"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 116,
+    "question": "What does the term 'soundscape' refer to in sound studies?",
+    "answerChoices": [
+      "The acoustic environment perceived by a listener",
+      "A synthesized texture in electronic music",
+      "A surround sound audio setup",
+      "The stereo field of a recording"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "soundstudies"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 117,
+    "question": "Who composed the first electroacoustic work using tape manipulation?",
+    "answerChoices": [
+      "Pierre Schaeffer",
+      "Iannis Xenakis",
+      "Edgard Varèse",
+      "Karlheinz Stockhausen"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "history"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 118,
+    "question": "What does an FFT (Fast Fourier Transform) do in audio analysis?",
+    "answerChoices": [
+      "Converts time-domain signals into frequency-domain data",
+      "Compresses audio data for storage",
+      "Eliminates noise in digital recordings",
+      "Analyzes phase relationships in stereo signals"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "software"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 119,
+    "question": "What is the purpose of a vocoder in audio processing?",
+    "answerChoices": [
+      "Modulate the spectral characteristics of one signal using another",
+      "Analyze and suppress background noise",
+      "Add reverb to vocal recordings",
+      "Equalize frequencies across a stereo field"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "dsp"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 120,
+    "question": "What does the term 'spectral editing' refer to in digital audio?",
+    "answerChoices": [
+      "Manipulating individual frequencies within an audio signal",
+      "Compressing dynamic range across the spectrum",
+      "Boosting high frequencies in a mix",
+      "Adding harmonic distortion to low frequencies"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "software"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 121,
+    "question": "What is 'automation' in a DAW?",
+    "answerChoices": [
+      "Programming changes in parameters over time",
+      "Synchronizing multiple audio tracks",
+      "Eliminating phase cancellation",
+      "Converting MIDI to audio in real-time"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "software"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 122,
+    "question": "What innovation did Bob Moog introduce to electronic music?",
+    "answerChoices": [
+      "The first commercially available voltage-controlled synthesizer",
+      "The invention of the digital sampler",
+      "The introduction of granular synthesis",
+      "The first tape-based echo unit"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "history"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 123,
+    "question": "What does the term 'low-latency mode' in audio software achieve?",
+    "answerChoices": [
+      "Minimizes delay between input and output signals",
+      "Compresses audio for real-time processing",
+      "Boosts high-frequency content for monitoring",
+      "Synchronizes MIDI and audio tracks"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "software"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 124,
+    "question": "What is the significance of a 'wavetable' in synthesis?",
+    "answerChoices": [
+      "It allows playback of pre-recorded waveforms",
+      "It generates sound based on mathematical algorithms",
+      "It simulates acoustic instrument resonances",
+      "It converts MIDI to analog signals"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "sound design"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 125,
+    "question": "What is 'audio convolution' commonly used for?",
+    "answerChoices": [
+      "Applying the acoustic characteristics of one sound to another",
+      "Analyzing the phase alignment of audio tracks",
+      "Reducing high-frequency noise in recordings",
+      "Generating artificial harmonics for instruments"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "dsp"
+},
+  {
+    "id": MEDIUM_BASE_ID + 126,
+    "question": "What is the significance of Karlheinz Stockhausen's 'Gesang der Jünglinge'?",
+    "answerChoices": [
+      "It was an early combination of electronic sound and recorded human voice",
+      "It introduced granular synthesis",
+      "It was the first piece to use real-time sound manipulation",
+      "It utilized the first commercial synthesizer"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "electronic music"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 127,
+    "question": "What does a MIDI 'velocity' message represent?",
+    "answerChoices": [
+      "The force or speed at which a note is played",
+      "The duration of a MIDI note",
+      "The pitch bend applied to a note",
+      "The modulation depth of the note"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "software"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 128,
+    "question": "What is the purpose of a high-impedance instrument input on an audio interface?",
+    "answerChoices": [
+      "Optimize the signal from electric guitars and basses",
+      "Reduce noise from condenser microphones",
+      "Provide phantom power for microphones",
+      "Boost line-level signals for better monitoring"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "hardware"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 129,
+    "question": "What is musique concrète?",
+    "answerChoices": [
+      "A form of music using recorded natural sounds as raw material",
+      "A style of music based on purely synthesized tones",
+      "An early genre of electronic dance music",
+      "A compositional technique focusing on algorithmic processes"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "history"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 130,
+    "question": "What does the term 'pitch shifting' refer to in audio processing?",
+    "answerChoices": [
+      "Changing the pitch of a sound without affecting its duration",
+      "Increasing the speed of a track to raise its pitch",
+      "Reducing the amplitude of low frequencies",
+      "Synchronizing the pitch of two tracks"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "dsp"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 131,
+    "question": "What is the purpose of the declicking tool in audio restoration?",
+    "answerChoices": [
+      "Remove clicks and pops from audio recordings",
+      "Enhance the clarity of transients",
+      "Reduce low-frequency hum",
+      "Eliminate phasing artifacts in stereo recordings"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "software"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 132,
+    "question": "What is the historical significance of the Fairlight CMI?",
+    "answerChoices": [
+      "It was one of the first digital samplers and workstations",
+      "It introduced subtractive synthesis",
+      "It was the first keyboard to use MIDI",
+      "It pioneered real-time audio convolution"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "history"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 133,
+    "question": "What does the term 'room tone' refer to in sound recording?",
+    "answerChoices": [
+      "The ambient sound of a location without dialogue or action",
+      "The resonance of a space during music playback",
+      "The frequency response of a recording space",
+      "The decay characteristics of a reverb effect"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "soundstudies"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 134,
+    "question": "What is the purpose of a low-latency buffer in an audio interface?",
+    "answerChoices": [
+      "Reduce delay during live monitoring or recording",
+      "Eliminate pops and clicks in audio playback",
+      "Boost the gain of low-level signals",
+      "Add reverb in real-time mixing"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "hardware"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 135,
+    "question": "What does the term 'wet/dry mix' refer to in effects processing?",
+    "answerChoices": [
+      "The balance between the processed and unprocessed signal",
+      "The ratio of high frequencies to low frequencies",
+      "The amplitude of reverb tails",
+      "The modulation depth of an effect"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "dsp"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 136,
+    "question": "Who developed the first commercial synthesizer?",
+    "answerChoices": [
+      "Robert Moog",
+      "Leon Theremin",
+      "Wendy Carlos",
+      "Don Buchla"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "history"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 137,
+    "question": "What is the significance of Max/MSP in music technology?",
+    "answerChoices": [
+      "It provides a visual programming environment for sound design and interactive media",
+      "It introduced real-time audio convolution",
+      "It was the first DAW to include MIDI sequencing",
+      "It pioneered granular synthesis for music production"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "software"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 138,
+    "question": "What does the term 'stereo imaging' refer to?",
+    "answerChoices": [
+      "The perceived spatial placement of sounds within a stereo field",
+      "The dynamic range of stereo recordings",
+      "The phase alignment of two audio channels",
+      "The compression applied to stereo tracks"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "psychoacoustics"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 139,
+    "question": "What is the purpose of an audio limiter?",
+    "answerChoices": [
+      "Prevent peaks from exceeding a set threshold",
+      "Boost low-frequency content",
+      "Compress the dynamic range of a mix",
+      "Enhance the stereo width"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "dsp"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 140,
+    "question": "What is the primary function of a vocoder?",
+    "answerChoices": [
+      "Impose the spectral characteristics of one sound onto another",
+      "Add harmonic distortion to low frequencies",
+      "Generate sine waves from sampled audio",
+      "Create dynamic stereo effects"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "sound design"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 141,
+    "question": "What was the purpose of the GRM (Groupe de Recherches Musicales)?",
+    "answerChoices": [
+      "Develop musique concrète and explore tape music techniques",
+      "Invent new forms of MIDI-based sequencing",
+      "Create the first real-time audio synthesizer",
+      "Develop software for live sound processing"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "history"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 142,
+    "question": "What does the term 'audio normalization' refer to?",
+    "answerChoices": [
+      "Adjusting the overall gain of an audio file to meet a target level",
+      "Reducing dynamic range to balance loud and quiet parts",
+      "Removing background noise from recordings",
+      "Boosting low frequencies in a mix"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "software"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 143,
+    "question": "What is the significance of 'Switched-On Bach' by Wendy Carlos?",
+    "answerChoices": [
+      "It popularized the Moog synthesizer by demonstrating its musical potential",
+      "It introduced digital synthesis to the mainstream",
+      "It was the first album to use MIDI sequencing",
+      "It pioneered ambient soundscapes"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "electronic music"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 144,
+    "question": "What is 'mid-side' processing in audio mixing?",
+    "answerChoices": [
+      "A technique to manipulate the center and sides of a stereo mix separately",
+      "Boosting midrange frequencies for clarity",
+      "Enhancing the side channels to widen the stereo field",
+      "Compressing the central elements of a mix"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "dsp"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 145,
+    "question": "What does the term 'parameter modulation' mean in a DAW?",
+    "answerChoices": [
+      "Using one parameter to dynamically control another",
+      "Automating volume levels across tracks",
+      "Synchronizing MIDI to audio data",
+      "Applying EQ settings based on dynamic input"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "software"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 146,
+    "question": "What is the purpose of spectral editing in audio restoration?",
+    "answerChoices": [
+      "Target and remove unwanted frequencies without affecting the rest of the signal",
+      "Normalize the amplitude of an audio file",
+      "Compress the dynamic range of a track",
+      "Enhance stereo imaging through frequency manipulation"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "software"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 147,
+    "question": "Who is considered a pioneer of granular synthesis?",
+    "answerChoices": [
+      "Iannis Xenakis",
+      "Robert Moog",
+      "Pierre Schaeffer",
+      "Max Mathews"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "history"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 148,
+    "question": "What is the main advantage of a ribbon microphone?",
+    "answerChoices": [
+      "Smooth and natural high-frequency response",
+      "High durability for live performances",
+      "Wide omnidirectional pickup pattern",
+      "Requires no external power source"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "hardware"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 149,
+    "question": "What is the purpose of a convolution reverb?",
+    "answerChoices": [
+      "Recreate the acoustic characteristics of real spaces",
+      "Add artificial reverb to vocals",
+      "Compress the dynamic range of a mix",
+      "Enhance low-frequency reflections"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "dsp"
+  },
+  {
+    "id": MEDIUM_BASE_ID + 150,
+    "question": "What does 'RT60' measure in room acoustics?",
+    "answerChoices": [
+      "The time for sound to decay by 60 dB",
+      "The frequency response of a space",
+      "The level of ambient noise in a room",
+      "The clarity of speech in an environment"
+    ],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "category": "acoustics"
   }
-];
+]  

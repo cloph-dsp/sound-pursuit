@@ -1,8 +1,7 @@
-import React from 'react';
-import Timer from './Timer';
+import React, { useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 interface ScoreDisplayProps {
-  score: number;
   difficulty: string;
   questionsNeeded: number;
   timer: number;
@@ -10,28 +9,44 @@ interface ScoreDisplayProps {
 }
 
 const ScoreDisplay: React.FC<ScoreDisplayProps> = ({
-  score,
   difficulty,
   questionsNeeded,
   timer,
   onTimerEnd
 }) => {
+  useEffect(() => {
+    if (timer === 0) {
+      onTimerEnd();
+    }
+  }, [timer, onTimerEnd]);
+
+  const timerProgress = (timer / 30) * 100;
+
   return (
-    <div className="flex justify-between items-center space-x-6">
-      <div className="flex flex-col space-y-2">
-        <div className="px-3 py-1.5 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded-full shadow-lg">
-          <p className="text-sm font-semibold">Score: {score}</p>
-        </div>
-        <div className="px-2.5 py-1 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded-full shadow-lg">
-          <p className="text-xs">Next Level: {questionsNeeded} Qs</p>
+    <div className="flex flex-col gap-4">
+      <div className="flex items-center justify-center">
+        <div className="flex flex-col items-center -mt-1">
+          <span className="text-xl font-semibold text-gray-300 capitalize">
+            Level: {difficulty}
+          </span>
+          <span className="text-sm text-gray-400">
+            {questionsNeeded} to advance
+          </span>
         </div>
       </div>
-      <div className="flex flex-col space-y-2">
-        <div className="px-3 py-1.5 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded-full shadow-lg">
-          <Timer timer={timer} onTimerEnd={onTimerEnd} />
-        </div>
-        <div className="px-2.5 py-1 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded-full shadow-lg">
-          <p className="text-xs">Difficulty: {difficulty}</p>
+
+      <div className="w-full">
+        <div className="relative h-2 w-full bg-gray-700/30 rounded-full overflow-hidden">
+          <motion.div
+            animate={{ width: `${timerProgress}%` }}
+            transition={{ duration: 0.3 }}
+            className={`absolute h-full rounded-full
+              ${timerProgress > 50 
+                ? 'bg-emerald-400' 
+                : timerProgress > 20 
+                  ? 'bg-yellow-400' 
+                  : 'bg-rose-400'}`}
+          />
         </div>
       </div>
     </div>
