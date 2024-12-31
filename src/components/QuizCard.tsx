@@ -28,15 +28,17 @@ const QuizCard: React.FC = () => {
   }
 
   return (
-    <div className="bg-white shadow-md rounded-lg p-6 max-w-md mx-auto sm:max-w-lg md:max-w-xl lg:max-w-2xl">
-      <ScoreDisplay
-        score={score}
-        difficulty={difficulty}
-        questionsNeeded={progress.questionsNeededForNextLevel}
-        timer={timer}
-        onTimerEnd={handleTimerEnd}
-      />
-      <h2 className="text-xl font-bold mb-4">{currentQuestion.question}</h2>
+    <div className="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 max-w-md mx-auto sm:max-w-lg md:max-w-xl lg:max-w-2xl">
+      <div className="mb-8">
+        <ScoreDisplay
+          score={score}
+          difficulty={difficulty}
+          questionsNeeded={progress.questionsNeededForNextLevel}
+          timer={timer}
+          onTimerEnd={handleTimerEnd}
+        />
+      </div>
+      <h2 className="text-xl font-bold mb-4 dark:text-white">{currentQuestion.question}</h2>
       <AnswerGrid
         answers={currentQuestion.answerChoices}
         selectedAnswer={selectedAnswer}
@@ -46,7 +48,7 @@ const QuizCard: React.FC = () => {
       />
       {isAnswered && (
         <div className="mt-4">
-          <p className={`text-center ${feedback.includes('Correct') ? 'text-green-500' : 'text-red-500'}`}>
+          <p className={`text-center ${feedback.includes('Correct') ? 'text-green-500 dark:text-green-400' : 'text-red-500 dark:text-red-400'}`}>
             {feedback}
           </p>
         </div>

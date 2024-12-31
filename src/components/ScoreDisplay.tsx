@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Timer from './Timer';
 
 interface ScoreDisplayProps {
@@ -16,21 +16,23 @@ const ScoreDisplay: React.FC<ScoreDisplayProps> = ({
   timer,
   onTimerEnd
 }) => {
-  useEffect(() => {
-    if (timer === 0) {
-      onTimerEnd();
-    }
-  }, [timer, onTimerEnd]);
-
   return (
-    <div className="flex flex-col sm:flex-row justify-between items-center mb-4">
-      <div className="mb-4 sm:mb-0">
-        <p className="text-lg font-semibold">Score: {score}</p>
-        <p className="text-sm">Next Level: {questionsNeeded} Qs</p>
+    <div className="flex justify-between items-center space-x-6">
+      <div className="flex flex-col space-y-2">
+        <div className="px-3 py-1.5 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded-full shadow-lg">
+          <p className="text-sm font-semibold">Score: {score}</p>
+        </div>
+        <div className="px-2.5 py-1 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded-full shadow-lg">
+          <p className="text-xs">Next Level: {questionsNeeded} Qs</p>
+        </div>
       </div>
-      <div className="text-center">
-        <Timer timer={timer} onTimerEnd={onTimerEnd} />
-        <p className="text-sm mt-2">Difficulty: {difficulty}</p>
+      <div className="flex flex-col space-y-2">
+        <div className="px-3 py-1.5 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded-full shadow-lg">
+          <Timer timer={timer} onTimerEnd={onTimerEnd} />
+        </div>
+        <div className="px-2.5 py-1 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded-full shadow-lg">
+          <p className="text-xs">Difficulty: {difficulty}</p>
+        </div>
       </div>
     </div>
   );

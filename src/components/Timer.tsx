@@ -12,7 +12,7 @@ const Timer: React.FC<TimerProps> = ({ timer, onTimerEnd }) => {
     }
   }, [timer, onTimerEnd]);
 
-  return <div className="text-lg font-semibold">Time: {timer}s</div>;
+  return <div className="text-sm font-semibold">Time: {timer}s</div>;
 };
 
 export default Timer;

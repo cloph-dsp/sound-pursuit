@@ -6,18 +6,18 @@ interface SettingsMenuProps {
 }
 
 export default function SettingsMenu({ isOpen, onClose }: SettingsMenuProps) {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const savedMode = localStorage.getItem('dark-mode');
+    return savedMode ? JSON.parse(savedMode) : false;
+  });
 
   useEffect(() => {
-    if (isDarkMode) {
-      document.body.classList.add('dark-mode');
-    } else {
-      document.body.classList.remove('dark-mode');
-    }
+    document.documentElement.classList.toggle('dark', isDarkMode);
+    localStorage.setItem('dark-mode', JSON.stringify(isDarkMode));
   }, [isDarkMode]);
 
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
+  const handleDarkModeToggle = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setIsDarkMode(event.target.checked);
   };
 
   return (
@@ -62,8 +62,8 @@ export default function SettingsMenu({ isOpen, onClose }: SettingsMenuProps) {
               <input
                 type="checkbox"
                 checked={isDarkMode}
-                onChange={toggleDarkMode}
-                className="w-5 h-5 rounded-md"
+                onChange={handleDarkModeToggle}
+                className="form-checkbox h-5 w-5 text-blue-600 rounded-md"
               />
               <span className="text-sm font-medium dark:text-gray-100">{isDarkMode ? 'On' : 'Off'}</span>
             </label>

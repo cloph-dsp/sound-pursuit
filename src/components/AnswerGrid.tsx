@@ -24,10 +24,10 @@ const AnswerGrid: React.FC<AnswerGridProps> = ({ answers, selectedAnswer, correc
             disabled={isAnswered}
             className={`p-4 rounded-lg text-left font-medium border ${
               isCorrect
-                ? 'bg-green-100 border-green-500 text-green-800'
+                ? 'bg-green-100 dark:bg-green-900 border-green-500 text-green-800 dark:text-green-100'
                 : isSelectedIncorrect
-                ? 'bg-red-100 border-red-500 text-red-800'
-                : 'bg-white border-gray-300 text-gray-700 hover:bg-gray-100'
+                ? 'bg-red-100 dark:bg-red-900 border-red-500 text-red-800 dark:text-red-100'
+                : 'bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-600'
             }`}
           >
             {answer}
