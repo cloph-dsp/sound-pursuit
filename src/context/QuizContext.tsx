@@ -14,6 +14,7 @@ interface QuizContextProps {
   difficulty: 'easy' | 'medium' | 'hard';
   questionsNeeded: number;
   timer: number;
+  additionalQuestionsNeeded: number;  // Add this field
   setTimer: React.Dispatch<React.SetStateAction<number>>;
   handleAnswerSelect: (answer: number) => void;
   handleAnswerClick: (answer: number) => void;
@@ -38,7 +39,7 @@ const initialState: QuizState = {
   feedback: '',
   score: 0,
   timer: 30,
-  additionalQuestionsNeeded: 0
+  additionalQuestionsNeeded: 0  // Initialize penalties
 };
 
 const FEEDBACK_DELAY = 2000; // 2 seconds delay before next question
@@ -77,40 +78,49 @@ export const QuizProvider = ({ children }: { children: ReactNode }) => {
     
     const isTimeout = answer === -1;
     const isCorrect = !isTimeout && answer === state.currentQuestion.correctAnswer;
-    const feedback = isTimeout
-      ? `Time's up! The correct answer was: ${state.currentQuestion.answerChoices[state.currentQuestion.correctAnswer]}`
-      : isCorrect 
-        ? "Correct!"
-        : `Incorrect. The correct answer was: ${state.currentQuestion.answerChoices[state.currentQuestion.correctAnswer]}`;
-
+    
     setState((prevState) => {
+      if (!prevState.currentQuestion) return prevState;
+
+      // 1. Calculate new correct answers
       const newCorrectAnswers = isCorrect ? prevState.progress.correctAnswers + 1 : prevState.progress.correctAnswers;
       
-      // Accumulate penalties for wrong answers (not timeouts)
-      const newAdditionalQuestions = (!isCorrect && !isTimeout)
-        ? prevState.additionalQuestionsNeeded + 1
+      // 2. Update penalties
+      const newPenalty = (!isCorrect && !isTimeout) 
+        ? prevState.additionalQuestionsNeeded + 1 
         : prevState.additionalQuestionsNeeded;
-      
-      // Calculate total required questions including penalties
-      const totalQuestionsNeeded = QUESTIONS_TO_ADVANCE + newAdditionalQuestions;
-      
+
+      // 3. Calculate total required with penalties
+      const totalRequired = Math.min(
+        QUESTIONS_TO_ADVANCE,
+        QUESTIONS_TO_ADVANCE + newPenalty
+      );
+
+      // 4. Check level advancement
       let newLevel = prevState.progress.currentLevel;
-      if (newCorrectAnswers >= totalQuestionsNeeded) {
+      if (newCorrectAnswers >= totalRequired) {
         newLevel = calculateNextLevel(prevState.progress);
       }
+
+      // 5. Calculate remaining questions
+      const remainingQuestions = totalRequired - newCorrectAnswers;
 
       return {
         ...prevState,
         isAnswered: true,
         selectedAnswer: answer,
-        feedback,
-        additionalQuestionsNeeded: newLevel !== prevState.progress.currentLevel ? 0 : newAdditionalQuestions,
+        feedback: isTimeout
+          ? `Time's up! The correct answer was: ${prevState.currentQuestion.answerChoices[prevState.currentQuestion.correctAnswer]}`
+          : isCorrect 
+            ? "Correct!"
+            : `Incorrect. The correct answer was: ${prevState.currentQuestion.answerChoices[prevState.currentQuestion.correctAnswer]}`,
+        additionalQuestionsNeeded: newLevel !== prevState.progress.currentLevel ? 0 : newPenalty,
         progress: {
           ...prevState.progress,
           currentLevel: newLevel,
-          answeredQuestions: [...prevState.progress.answeredQuestions, prevState.currentQuestion!.id],
+          answeredQuestions: [...prevState.progress.answeredQuestions, prevState.currentQuestion.id],
           correctAnswers: newLevel !== prevState.progress.currentLevel ? 0 : newCorrectAnswers,
-          questionsNeededForNextLevel: totalQuestionsNeeded - newCorrectAnswers
+          questionsNeededForNextLevel: remainingQuestions // This value is passed to ScoreDisplay
         }
       };
     });
@@ -187,7 +197,7 @@ export const QuizProvider = ({ children }: { children: ReactNode }) => {
         handleNextQuestion,
         handleTimerEnd,
         difficulty: state.progress.currentLevel,
-        questionsNeeded: state.progress.questionsNeededForNextLevel,
+        questionsNeeded: state.progress.questionsNeededForNextLevel, // Make sure this is exposed
         setTimer: (newTimer) => setState((prevState: QuizState) => ({ ...prevState, timer: newTimer as number })),
       }}
     >

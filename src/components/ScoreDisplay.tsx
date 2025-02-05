@@ -3,14 +3,14 @@ import { motion } from 'framer-motion';
 
 interface ScoreDisplayProps {
   difficulty: string;
-  questionsNeeded: number;
+  questionsNeeded: number;  // This now shows total required including penalties
   timer: number;
   onTimerEnd: () => void;
 }
 
 const ScoreDisplay: React.FC<ScoreDisplayProps> = ({
   difficulty,
-  questionsNeeded,
+  questionsNeeded,  // This now shows total required including penalties
   timer,
   onTimerEnd
 }) => {
@@ -30,7 +30,7 @@ const ScoreDisplay: React.FC<ScoreDisplayProps> = ({
             Level: {difficulty}
           </span>
           <span className="text-sm text-gray-400">
-            {questionsNeeded} to advance
+            {questionsNeeded} more to advance  {/* Updated text for clarity */}
           </span>
         </div>
       </div>

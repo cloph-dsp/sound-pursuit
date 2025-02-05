@@ -11,7 +11,7 @@ const QuizCard: React.FC = () => {
     isAnswered,
     feedback,
     difficulty,
-    progress,
+    questionsNeeded, // Get directly from context instead of progress
     timer,
     handleAnswerClick,
     handleTimerEnd
@@ -33,7 +33,7 @@ const QuizCard: React.FC = () => {
       <div className="pb-4">
         <ScoreDisplay
           difficulty={difficulty}
-          questionsNeeded={progress.questionsNeededForNextLevel}
+          questionsNeeded={questionsNeeded} // Pass the value directly
           timer={timer}
           onTimerEnd={handleTimerEnd}
         />
